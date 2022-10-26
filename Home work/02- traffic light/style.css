@@ -1,0 +1,91 @@
+/* disable defaults */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Global changes */
+html {
+  font-family: "Archivo", sans-serif;
+  color: #fff;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.title {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+/* light bright */
+.red-bright {
+  background-color: #c0392b !important;
+  box-shadow: 0 0 20px 5px #c0392b;
+}
+.yellow-bright {
+  background-color: #f1c40f !important;
+  box-shadow: 0 0 20px 5px #f1c40f;
+}
+.green-bright {
+  background-color: #2ecc71 !important;
+  box-shadow: 0 0 20px 5px #2ecc71;
+}
+
+/* Local changes */
+.container {
+  background-color: #2c3e50;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+  height: 400px;
+  width: 140px;
+}
+/* each light */
+.circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.circle::after {
+  border-right: 4px solid rgba(255, 255, 255, 0.6);
+  border-radius: 100%;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 60px;
+  height: 60px;
+}
+.circle:hover {
+  cursor: pointer;
+   background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* bottom button */
+.btn-section {
+  margin-top: 2rem;
+}
+.btn {
+  margin: 1rem;
+  background-color: #3d644d;
+  padding: 0.7rem;
+  border-radius: 50px;
+  transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #643d3d;
+}

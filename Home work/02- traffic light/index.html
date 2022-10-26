@@ -1,1 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- JS Links -->
+    <script src="javaScript.js"></script>
+    <!-- Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Traffic light</title>
+  </head>
+  <body>
+    <h2 class="title">Traffic Light</h2>
+    <div class="container">
+      <div class="circle red" id="red-light" onclick="changeColor(this)"></div>
+      <div
+        class="circle yellow"
+        id="yellow-light"
+        onclick="changeColor(this)"
+      ></div>
+      <div
+        class="circle green"
+        id="green-light"
+        onclick="changeColor(this)"
+      ></div>
+    </div>
+    <div class="btn-section">
+      <div class="btn" onclick="changeAll()">Turn all ON / OFF</div>
+    </div>
+  </body>
+</html>
