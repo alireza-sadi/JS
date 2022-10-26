@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
 
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas width="400" height="400"></canvas>
+    <p>Draw on this box</p>
+
+    <script>
+      canvas = document.getElementsByTagName("canvas")[0];
+      ctx = canvas.getContext("2d");
+      x = -1;
+      y = -1;
+      canDraw = false;
+
+      document.addEventListener("mousemove", function (e) {
+        if (canDraw) {
+          ctx.moveTo(x, y);
+          ctx.lineTo(e.x, e.y);
+          ctx.stroke();
+          x = e.x;
+          y = e.y;
+        }
+      });
+
+      document.addEventListener("mouseup", function (e) {
+        canDraw = false;
+      });
+
+      document.addEventListener("mousedown", function (e) {
+        x = e.x;
+        y = e.y;
+        canDraw = true;
+      });
+    </script>
+  </body>
+</html>
