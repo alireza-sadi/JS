@@ -1,1 +1,99 @@
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+  }
+  h2 {
+    font: normal 700 2rem sans-serif;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  #holder {
+    width: 500px;
+    height: 500px;
+    display: block;
+    position: relative;
+    outline: 5px solid orangered;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px white;
+  }
 
+  .ball {
+    border: 1px solid black;
+    border-radius: 10em;
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    background-color: #ff055f;
+  }
+</style>
+<body>
+  <h2>Balls Movment</h2>
+  <div id="holder"></div>
+</body>
+
+<script>
+  holder = document.getElementById("holder");
+
+  function random_pos() {
+    return Math.floor(Math.random() * 500);
+  }
+
+  function random_direction() {
+    return Math.random() >= 0.5 ? +1 : -1;
+  }
+
+  function random_speed() {
+    return 1 + Math.floor(Math.random() * 5);
+  }
+
+  for (let x = 0; x < 10; x++) {
+    ball = document.createElement("div");
+    ball.className = "ball";
+    ball.setAttribute("x", random_pos());
+    ball.setAttribute("y", random_pos());
+    ball.setAttribute("dx", +1);
+    ball.setAttribute("dy", +1);
+    ball.setAttribute("speed", random_speed());
+    holder.appendChild(ball);
+  }
+
+  function update() {
+    balls = document.getElementsByClassName("ball");
+    Array.from(balls).forEach(function (ball) {
+      x = parseInt(ball.getAttribute("x"));
+      y = parseInt(ball.getAttribute("y"));
+      dx = parseInt(ball.getAttribute("dx"));
+      dy = parseInt(ball.getAttribute("dy"));
+      speed = parseInt(ball.getAttribute("speed"));
+
+      x += dx * speed;
+      y += dy * speed;
+
+      if (x > 500 - 15 && dx == +1) dx = -1;
+      if (y > 500 - 15 && dy == +1) dy = -1;
+      if (x < 0 && dx == -1) dx = +1;
+      if (y < 0 && dy == -1) dy = +1;
+
+      ball.style.left = x + "px";
+      ball.style.top = y + "px";
+
+      ball.setAttribute("x", x);
+      ball.setAttribute("y", y);
+      ball.setAttribute("dx", dx);
+      ball.setAttribute("dy", dy);
+    });
+  }
+
+  setInterval(update, 1);
+</script>
