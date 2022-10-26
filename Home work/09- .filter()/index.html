@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
+  <body>
+    <div id="container"></div>
+    <script>
+      //با استفاده از متد
+      //.filter()
+      //از ارایه بالا، تمام اعداد بزرگتر از 60 را نمایش دهید
+      arr = [12, 15, 67, 34, 14, 78, 100];
+      c = document.getElementById("container");
+      a = arr.filter((x) => x > 60);
+      c.innerText = a;
+    </script>
+  </body>
+</html>
