@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
+  <body>
+    <div></div>
+    <template>
+      <div>
+        <p></p>
+        <input type="button" value="REMOVE" onclick="removeThis(this)" />
+      </div>
+    </template>
+    <script>
+      d = document.querySelector("div");
+      t = document.querySelector("template");
+
+      A = ["User1", "User2", "User3"];
+
+      A.forEach((user) => {
+        d.innerHTML = t.innerHTML + d.innerHTML;
+        p = d.querySelector("p");
+        p.innerHTML = user;
+      });
+
+      const removeThis = (el) => {
+        el.parentNode.parentNode.removeChild(el.parentNode);
+      };
+    </script>
+  </body>
+</html>
