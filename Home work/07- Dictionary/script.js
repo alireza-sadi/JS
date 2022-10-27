@@ -14,13 +14,15 @@ dictionary = {
 };
 function add() {
   if (w.value == "" || d.value == "") alert("no word detected!");
+  else if (dictionary[w.value.toLowerCase()]){
+  alert("This word is already exist!")}
   else if (w.value !== "" && d.value !== "") {
-    dictionary[w.value.replace(" ", "")] = d.value;
-    dictionary[d.value.replace(" ", "")] = w.value;
+    dictionary[w.value.toLowerCase().replace(" ", "")] = d.value;
+    dictionary[d.value.toLowerCase().replace(" ", "")] = w.value;
     alert("Your Dictionary has been updated! ");
   }
 }
 
 wTr.addEventListener("input", (e) => {
-  dTr.value = dictionary[wTr.value];
+  dTr.value = dictionary[wTr.value.toLowerCase()];
 });
