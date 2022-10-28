@@ -1,0 +1,110 @@
+header {
+  position: relative;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 9rem 0 9rem;
+  background-color: transparent;
+  color: #fff;
+}
+.h-banner {
+  width: 40%;
+  transform: scale(1.2);
+}
+.h-text {
+  width: 60%;
+  height: 40%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.h-text .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-text .text h2 {
+  padding-bottom: 1rem;
+  font: normal 2.5rem roboto, sans-serif;
+  word-wrap: break-word;
+  margin: 0 2rem;
+}
+
+.h-text .text p {
+  padding-bottom: 2rem;
+  font: 300 1.2rem roboto, sans-serif;
+  color: var(--text-color-white);
+  word-wrap: break-word;
+  margin: 0 4rem 0 2rem;
+}
+.h-text .button {
+  display: flex;
+  align-items: center;
+}
+.h-text .button a {
+  text-align: center;
+  font: 500 0.9rem roboto, sans-serif;
+  width: 8rem;
+  margin: 0 1.5rem;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.h-text .button a:first-child {
+  background-color: var(--button-background-color);
+}
+.h-text .button a:first-child:hover {
+  background-color: var(--button-hover-color);
+}
+
+.h-text .button a:last-child:hover {
+  text-decoration: underline;
+}
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  html{
+      font-size: 14px;
+  }
+  .h-banner {
+    visibility: hidden;
+  }
+  .hero {
+    padding: 0;
+  
+  }
+  .h-text {
+    padding: 2rem;
+    width: 100%;
+  }
+  .h-text .text h2 {
+    margin:0;
+    padding-right: 1rem;
+}
+  .h-text .text p{
+    padding: 0;
+    margin: 0;
+
+  }
+  .h-text .button a{
+    padding: 0.6rem;
+    margin-top: 2rem;
+  }
+  .h-text .button a:first-child{
+    margin-left: 0;
+  }
+}
+/* responsive for laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    padding: 0 1rem;
+  }
+}

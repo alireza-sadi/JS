@@ -1,0 +1,36 @@
+/* import modules */
+
+/* logo */
+@import url(./nav-menu/nav-logo.css);
+/* nav menu */
+@import url(./nav-menu/nav-menu.css);
+/* buy button */
+@import url(./nav-menu/buy-button.css);
+/* mobile menu */
+@import url(./nav-menu/mobile-menu.css);
+.navbar {
+  z-index: 1;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 6.3rem;
+  color: #fff;
+  /* background-image: var(--background-gradient); */
+}
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .navbar {
+    background-color: var(--text-color-black);
+    background-image: none;
+    padding: 2rem 4rem;
+  }
+}
+/* responsive for laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+}

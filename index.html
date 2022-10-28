@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SB UI Kit Pro</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fav icon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/fav-icon.ico"
+      type="image/x-icon"
+    />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css"
+      integrity="sha512-9nqhm3FWfB00id4NJpxK/wV1g9P2QfSsEPhSSpT+6qrESP6mpYbTfpC+Jvwe2XY27K5mLwwrqYuzqMGK5yC9/Q=="
+      crossorigin="anonymous"
+    />
+    <!-- Roboto 300,400,500,700,900 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navigation menu -->
+    <nav class="navbar">
+      <div class="logo"><a href="#"> SB UI Kit Pro</a></div>
+      <div class="nav-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="landings" onclick="showMenu(this)">
+            <a href="#">Landings <i class="fas fa-angle-right"></i></a>
+            <div class="landings-menu ">
+              <div class="left-div">
+                <div class="text">
+                  <div class="title">
+                    Multipurpose landing pages for a variety of projects.
+                  </div>
+                  <a href="#">View All</a>
+                </div>
+              </div>
+              <div class="right-div">
+                <div class="column">
+                  <h6>APPLICATIONS</h6>
+                  <a href="#">Mobile App</a>
+                  <a href="#">Desktop App</a>
+                  <div class="divider"></div>
+                  <h6>BUSINESS</h6>
+                  <a href="#">Multipurpose</a>
+                  <a href="#">Agency</a>
+                  <a href="#">Press</a>
+                  <a href="#">Directory</a>
+                  <a href="#">Rental</a>
+                  <a href="#">Real Estate</a>
+                  <a href="#">Classifieds</a>
+                  <div class="divider"></div>
+                  <h6>LEAD GENERATION</h6>
+                  <a href="#">Lead Capture</a>
+                </div>
+                <div class="column">
+                  <h6>PERSONAL</h6>
+                  <a href="#">Resume</a>
+                  <a href="#">Portfolio</a>
+                  <div class="divider"></div>
+                  <h6>HEADER STYLES</h6>
+                  <a href="#">Basic</a>
+                  <a href="#">Basic (Signup)</a>
+                  <a href="#">Graphic</a>
+                  <a href="#">Graphic (Signup)</a>
+                  <a href="#">Video Header <span>New!</span></a>
+                  <a href="#">Inner Page</a>
+                  <a href="#">Nav Only</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="pages" onclick="showMenu(this)">
+            <a href="#">Pages<i class="fas fa-angle-right"></i></a>
+            <div class="pages-menu ">
+              <div class="column">
+                <h6>COMPANY</h6>
+                <a href="#">Basic Pages</a>
+                <a href="#">About</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+                <a href="#">Team</a>
+                <a href="#">Terms</a>
+                <div class="divider"></div>
+                <h6>SUPPORT</h6>
+                <a href="#">Help Center</a>
+                <a href="#">Knowledgebase</a>
+                <a href="#">Message Cneter</a>
+                <a href="#">Support Ticket</a>
+              </div>
+              <div class="column">
+                <h6>CAREERS</h6>
+                <a href="#">Careers List</a>
+                <a href="#">Position Details</a>
+                <div class="divider"></div>
+                <h6>BLOG</h6>
+                <a href="#">Overview</a>
+                <a href="#">Post</a>
+                <a href="#">Archive</a>
+                <div class="divider"></div>
+                <h6>PORTFOLIO</h6>
+                <a href="#">Grid</a>
+                <a href="#">Large Grid</a>
+                <a href="#">Masonry</a>
+                <a href="#">Case Study</a>
+                <a href="#">Project</a>
+              </div>
+              <div class="column">
+                <h6>ERROR</h6>
+                <a href="#">400 Error</a>
+                <a href="#">401 Error</a>
+                <a href="#">404 Error (Option 1)</a>
+                <a href="#">404 Error (Option 2)</a>
+                <a href="#">500 Error</a>
+                <a href="#">503 Error</a>
+                <a href="#">504 Error</a>
+              </div>
+            </div>
+          </li>
+          <li class="documentation" onclick="showMenu(this)">
+            <a href="#">Documentation<i class="fas fa-angle-right"></i></a>
+            <div class="documentation-menu ">
+              <a href="#" class="d-one">
+                <div class="d-logo"><i class="fas fa-book"></i></div>
+                <div class="documentation-desc">
+                  <div class="d-title">Documentation</div>
+                  <div class="d-desc">Usage instrouctions and reference</div>
+                </div>
+              </a>
+              <a href="#" class="d-two">
+                <div class="d-logo"><i class="fas fa-code"></i></div>
+                <div class="documentation-desc">
+                  <div class="d-title">Components</div>
+                  <div class="d-desc">Code sippets and reference</div>
+                </div>
+              </a>
+              <a href="#" class="d-three">
+                <div class="d-logo"><i class="fas fa-file-text"></i></div>
+                <div class="documentation-desc">
+                  <div class="d-title">Changelog</div>
+                  <div class="d-desc">Updates and changes</div>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="buy-btn">Buy Now <i class="fas fa-arrow-right"></i></div>
+      <div class="mobile-menu"><i class="fa fa-bars"></i></div>
+    </nav>
+    <!-- Head  -->
+    <section class="top-site">
+      <!-- Hero header -->
+      <header>
+        <div class="hero">
+          <div class="h-text">
+            <div class="text">
+              <h2>Build your next project faster with SB UI Kit Pro</h2>
+              <p>
+                Welcome to SB UI Kit Pro, a toolkit for building beautiful web
+                interfaces, created by the development team at Start Bootstrap
+              </p>
+            </div>
+            <div class="button">
+              <a href="#">Get Started <i class="fas fa-arrow-right"></i></a>
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+          <div class="h-banner">
+            <img src="./assets/img/windows.svg" alt="" />
+          </div>
+        </div>
+      </header>
+    </section>
+    <!-- Main  -->
+    <main>
+      <!-- section one -->
+      <section class="sect-one">
+        <div class="s-o-column">
+          <div class="s-o-logo"><i class="fab fa-stack-overflow"></i></div>
+          <div class="s-o-text">
+            <h2>Built for developers</h2>
+            <p>
+              Our customizable, block-based build system makes creating your
+              next project fast and easy!
+            </p>
+          </div>
+        </div>
+        <div class="s-o-column">
+          <div class="s-o-logo"><i class="fas fa-mobile-alt"></i></div>
+          <div class="s-o-text">
+            <h2>Modern responsive design</h2>
+            <p>
+              Featuring carefully crafted, mobile-first components, your end
+              product will function beautifully on any device!
+            </p>
+          </div>
+        </div>
+        <div class="s-o-column">
+          <div class="s-o-logo"><i class="fas fa-code"></i></div>
+          <div class="s-o-text">
+            <h2>Complete documentation</h2>
+            <p>
+              All of the layouts, page sections, components, and utilities are
+              fully covered in this products docs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- section two -->
+      <section class="sect-two">
+        <div class="s-t-banner">
+          <img src="./assets/img/landing-portfolio.png" alt="" />
+        </div>
+        <div class="s-t-column">
+          <div class="s-t-c-header">
+            <h2>Here's What You Get</h2>
+            <p>
+              When you purchase this UI Kit, you get access to a robust suite of
+              powerful tools and components to help you build your next landing
+              page quickly and easily.
+            </p>
+          </div>
+          <div class="s-t-c-down">
+            <div class="s-t-c-content">
+              <div class="s-t-c-c">
+                <h4>Landing Pages</h4>
+                <p>
+                  We've crafted landing page examples for many popular business
+                  and product types.
+                </p>
+                <a href="#">Learn More<i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="s-t-c-c">
+                <h4>Layouts</h4>
+                <p>
+                  Our flex box based layout options make your site beautifully
+                  responsive and adaptable to any device.
+                </p>
+                <a href="#">Learn More<i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="s-t-c-content">
+              <div class="s-t-c-c">
+                <h4>Page Examples</h4>
+                <p>
+                  Use our pre-built page examples to quickly create inner pages
+                  to your website.
+                </p>
+                <a href="#">Learn More<i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="s-t-c-c">
+                <h4>Modular Sections</h4>
+                <p>
+                  All of the sections on each page are modular, so you can drop
+                  them into an existing page, or start with a new one!
+                </p>
+                <a href="#">Learn More<i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section three -->
+      <section class="sect-three">
+        <div class="sect-three-background"></div>
+        <div class="s-th-hedear">
+          <h2>Pricing Table</h2>
+          <span>Here's an example of a pricing table.</span>
+        </div>
+        <div class="price-div">
+          <div class="price-table">
+            <div class="price-type">Free</div>
+            <div class="price-amount">
+              <sup>$</sup> <span>0</span> <sub>/mo</sub>
+            </div>
+            <div class="price-details">
+              <span><i class="fas fa-check-circle"></i> 1 User</span>
+              <span><i class="fas fa-check-circle"></i> Community support</span>
+              <span><i class="far fa-circle"></i>Style customizer</span>
+              <span><i class="far fa-circle"></i>Custom components</span>
+              <span><i class="far fa-circle"></i>Expanded utilities</span>
+              <span><i class="far fa-circle"></i>Third-party integration</span>
+              <span><i class="far fa-circle"></i>Layout options</span>
+            </div>
+          </div>
+          <div class="price-table">
+            <div class="price-type standard">Standard</div>
+            <div class="price-amount">
+              <sup>$</sup> <span>19</span> <sub>/mo</sub>
+            </div>
+            <div class="price-details">
+              <span><i class="fas fa-check-circle"></i>Up to 15 Users</span>
+              <span
+                ><i class="fas fa-check-circle"></i>Email and live chat
+                support</span
+              >
+              <span><i class="fas fa-check-circle"></i>Stytle customizer</span>
+              <span><i class="fas fa-check-circle"></i>Custom components</span>
+              <span><i class="fas fa-check-circle"></i>Expanded utilities</span>
+              <span
+                ><i class="fas fa-check-circle"></i>Third-party
+                integration</span
+              >
+              <span><i class="fas fa-check-circle"></i>Layout options</span>
+            </div>
+          </div>
+          <div class="price-table">
+            <div class="price-type enterprise-type">Enterprise</div>
+            <div class="price-details enterprise-details">
+              This is an example of the pricing table element that is included
+              with this UI kit!
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section four -->
+      <section class="sect-four">
+        <div class="sectfour-container">
+          <div class="s-f-column">
+            <div class="s-f-c-div">
+              <div class="q-icon">
+                <i class="far fa-question"></i>
+              </div>
+              <div class="content">
+                <div class="question">What is SB UI Kit Pro?</div>
+                <div class="answer">
+                  SB UI Kit Pro is a fully coded, responsive, Bootstrap based UI
+                  toolkit for developers.
+                </div>
+              </div>
+            </div>
+            <div class="s-f-c-div">
+              <div class="q-icon">
+                <i class="far fa-question"></i>
+              </div>
+              <div class="content">
+                <div class="question">Do I get free updates?</div>
+                <div class="answer">
+                  All of Start Bootstrap's premium products will come with
+                  updates for feature additions, bugfixes, and other small
+                  updates.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="s-f-column">
+            <div class="s-f-c-div">
+              <div class="q-icon">
+                <i class="far fa-question"></i>
+              </div>
+              <div class="content">
+                <div class="question">What can I build with SB UI Kit Pro?</div>
+                <div class="answer">
+                  Build anything you want to using this UI kit! It is flexible,
+                  multipurpose, and full of tools for you to use during
+                  development.
+                </div>
+              </div>
+            </div>
+            <div class="s-f-c-div">
+              <div class="q-icon"><i class="far fa-question"></i></div>
+              <div class="content">
+                <div class="question">
+                  What frameworks does it integrate with?
+                </div>
+                <div class="answer">
+                  Our HTML based pro products are build with framework
+                  integration in mind. The compiled code is HTML and CSS, which
+                  is able to integrate with any framework.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section five -->
+      <section class="sect-five">
+        <div class="badge">Get Started</div>
+        <div class="text">
+          <h2>Save time with SB UI Kit Pro</h2>
+          <span
+            >Start Bootstrap's premium UI Kit beautifully and intuitively
+            extends the Bootstrap framework making it easy to build your next
+            project!</span
+          >
+        </div>
+        <div class="buy-btn">Buy Now!</div>
+      </section>
+
+      <!-- sectoion  sex -->
+      <section class="sect-six">
+        <div class="column">
+          <div class="logo">
+            <img src="./assets/img/Google_2015_logo.svg.png" alt="" />
+          </div>
+          <div class="text">
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error
+            vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum."
+          </div>
+          <div class="author">
+            <span>Adam Hall</span> <span>Head of Engineering</span>
+          </div>
+        </div>
+        <div class="column">
+          <div class="logo">
+            <img src="./assets/img/Instagram_logo.svg.png" alt="" />
+          </div>
+          <div class="text">
+            "Adipisci mollitia nemo magnam iure, temporibus molestiae odit, sit
+            harum dolores neque maiores quo eligendi nam corrupti."
+          </div>
+          <div class="author">
+            <span>Lia Peterson</span> <span>Technical Project Manager</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- section seven -->
+      <section class="sect-seven">
+        <div class="sect-seven-background"></div>
+        <div class="column work-smart">
+          <div class="logo">
+            <img src="./assets/img/work-smart-logo.png" alt="" />
+          </div>
+          <div class="text">
+            <div class="head">Work smarter , not harder</div>
+            <div class="content">
+              Learn more about how our product can save your time and effort in
+              the long run!
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="logo">
+            <img src="./assets/img/built-for-dev-logo.png" alt="" />
+          </div>
+          <div class="text">
+            <div class="head-purple">Built for developers</div>
+            <div class="content">
+              Our components, utilities, and layouts are built with developers
+              in mind.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section eight -->
+      <section class="sect-eight">
+        <div class="divider-seven"></div>
+        <div class="column-01">
+          <div>Ready to get started?</div>
+          <div>Get in touch or create an account.</div>
+        </div>
+        <div class="column-02">
+          <div class="btn"><a href="#">Contact Sales</a></div>
+          <div class="btn"><a href="#">Create Account</a></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <div class="logo"><a href="#"> SB UI Kit Pro</a></div>
+          <div class="site-description">Design made easy</div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <div class="footer-title">PRODUCT</div>
+          <a href="#">Landing</a>
+          <a href="#">Pages</a>
+          <a href="#">Sections</a>
+          <a href="#">Documentation</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div class="footer-column">
+          <div class="footer-title">TECHNICAL</div>
+          <a href="#">Documentation</a>
+          <a href="#">Changelog</a>
+          <a href="#">Theme Customizer</a>
+          <a href="#">UI Kit</a>
+        </div>
+        <div class="footer-column">
+          <div class="footer-title">INCLUDES</div>
+          <a href="#">Utilities</a>
+          <a href="#">Components</a>
+          <a href="#">Layouts</a>
+          <a href="#">Code Samples</a>
+          <a href="#">Products</a>
+          <a href="#">Affiliates</a>
+          <a href="#">Updates</a>
+        </div>
+        <div class="footer-column">
+          <div class="footer-title">LEGAL</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms and Conditions</a>
+          <a href="#">License</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="copyright-text">Copyright © Your Website 2021</div>
+        <div class="terms">
+          <a href="#">Privacy Policy</a>.<a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

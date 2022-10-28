@@ -1,0 +1,148 @@
+.sect-three-background {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  background-color: #f2f6fc;
+  top: 100%;
+  clip-path: ellipse(120vw 300px at top center);
+}
+.sect-three {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 5rem;
+  background-color: #f2f6fc;
+}
+
+.s-th-hedear {
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: 400 1.2rem roboto, sans-serif;
+}
+.s-th-hedear h2 {
+  font-size: 1.6rem;
+  padding-bottom: 1rem;
+  font-weight: normal;
+}
+.s-th-hedear span {
+  color: #69707a;
+}
+
+.price-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  font: 400 1.2rem roboto, sans-serif;
+}
+
+.price-table {
+  height: 450px;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+  border-radius: 0.4rem;
+}
+.price-table:not(:nth-child(2)) {
+  margin: 2rem;
+}
+.price-type {
+  background-color: #f2f6fc;
+  margin-top: 2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.price-amount {
+  color: #363d47;
+  font-size: 2rem;
+  padding: 1rem;
+}
+.price-amount span {
+  padding: 0 0.5rem;
+  font-size: 4rem;
+}
+.price-details {
+  padding: 0 8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.price-details span {
+  display: inline-block;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+}
+.price-details span i {
+  padding-right: 0.5rem;
+}
+
+.price-details .fa-check-circle {
+  color: rgb(27, 196, 153);
+}
+
+.price-details .fa-circle {
+  color: rgba(0, 0, 0, 0.2);
+}
+.standard {
+  background-color: rgb(218, 231, 251);
+  color: #3f61f3;
+}
+.enterprise-type {
+  margin-top: -0.2rem;
+}
+.enterprise-details {
+  text-align: center;
+  word-wrap: break-word;
+  padding: 4.5rem;
+  padding-bottom: 11.7rem;
+  color: #69707a;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .sect-three {
+    padding: 4rem 0;
+  }
+
+  .s-th-hedear {
+    padding: 0;
+    padding-bottom: 4rem;
+  }
+
+  .price-div {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+  .price-table {
+    width: 80%;
+  }
+  .price-type {
+    margin: 0;
+  }
+  .price-details {
+    padding: 0;
+  }
+}
+
+/* responsive for laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .price-details {
+    padding: 0;
+  }
+}

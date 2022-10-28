@@ -1,0 +1,47 @@
+/* import modules */
+
+/* hero */
+@import url(./hero.css);
+
+/* section one */
+@import url(./section-one.css);
+
+/* section two */
+@import url(./section-two.css);
+
+/* section three */
+@import url(./section-three.css);
+
+/* section four */
+@import url(./section-four.css);
+
+/* section five */
+@import url(./section-five.css);
+
+/* section six */
+@import url(./section-six.css);
+
+/* section seven */
+@import url(./section-seven.css);
+
+/* section eight */
+@import url(./section-eight.css);
+
+/* footer  */
+@import url(../footer/footer.css);
+
+
+.top-site {
+  width: 100%;
+  height: 550px;
+  background-image: var(--background-gradient);
+  clip-path: ellipse(120vw 550px at top center);
+}
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .top-site {
+    height: 450px;
+    clip-path: ellipse(150vw 450px at top center);
+  }
+}

@@ -1,0 +1,19 @@
+.logo {
+  margin-right: 1rem;
+  padding: 0.3rem;
+}
+
+.logo a {
+  font: bold 1.2rem roboto , sans-serif;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .logo{
+    margin-right: 0;
+    padding: 0;
+    margin-left: -1rem;
+  }
+}

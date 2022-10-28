@@ -1,0 +1,54 @@
+.sect-five {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  padding-bottom: 15rem;
+  background-color: #212832;
+  clip-path: ellipse(120vw 350px at top center);
+}
+
+.sect-five .badge {
+  color: #8b9296;
+  background-color: #1e242d;
+  font: 400 0.9rem roboto, sans-serif;
+  border-radius: 0.8rem;
+  padding: 0.2rem 0.8rem;
+}
+
+.sect-five .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 23rem;
+  color: #fff;
+  font: 400 1rem roboto, sans-serif;
+}
+
+.sect-five .text span {
+  color: #8b9296;
+  padding: 1rem;
+}
+
+/* buy button styles in  navbar/nav-menu/buy-button.css */
+
+/* responsive for mobile & tablet */
+@media (max-width: 768px) {
+  .sect-five {
+    width: 100%;
+    margin-top: 15rem;
+  }
+
+  .sect-five .text {
+    padding: 1rem 0;
+  }
+
+  .sect-five .buy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}

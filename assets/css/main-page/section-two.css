@@ -1,0 +1,137 @@
+
+.sect-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f6fc;
+  padding: 5rem 4rem;
+  border-bottom: 1px solid #8ebbff5e;
+}
+.s-t-banner {
+  position: relative;
+  height: 400px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1500px;
+  perspective-origin: right center;
+}
+
+.s-t-banner img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+  transform-style: preserve-3d;
+  transform: rotateY(30deg) rotateX(15deg);
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+}
+
+.s-t-column {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.s-t-column h4,
+.s-t-c-header h2 {
+  font: 500 1rem roboto, sans-serif;
+  padding-bottom: 0.5rem;
+  color: #363d47;
+}
+
+.s-t-c-header h2 {
+  font-size: 1.3rem;
+}
+
+.s-t-column p {
+  font: 400 0.8rem roboto, sans-serif;
+  color: #69707a;
+}
+.s-t-c-header {
+  padding: 2rem 0;
+}
+
+.s-t-c-down {
+  display: flex;
+}
+.s-t-c-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-t-c-c {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.s-t-c-c a {
+  padding-top: 0.5rem;
+  font: 400 0.8rem roboto, sans-serif;
+  text-decoration: none;
+  color: #0061f2;
+  z-index: 0 !important;
+}
+.s-t-c-c a:hover {
+  text-decoration: underline;
+}
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .sect-two {
+    flex-direction: column-reverse;
+  }
+  .s-t-banner {
+    width: 90%;
+  }
+
+  .s-t-column {
+    width: 100%;
+    display: flex;
+  }
+  .s-t-column h4,
+  .s-t-c-header h2 {
+    font: 500 1rem roboto, sans-serif;
+    padding-bottom: 0.5rem;
+    color: #363d47;
+  }
+
+  .s-t-c-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .s-t-column p {
+    font: 400 0.8rem roboto, sans-serif;
+    color: #69707a;
+  }
+  .s-t-c-header {
+    padding: 2rem 0;
+  }
+
+  .s-t-c-down {
+    display: flex;
+    flex-direction: column;
+  }
+  .s-t-c-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .s-t-c-c {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .s-t-c-c a {
+    padding-top: 0.5rem;
+    font: 400 0.8rem roboto, sans-serif;
+    text-decoration: none;
+    color: #0061f2;
+    z-index: 0 !important;
+  }
+  .s-t-c-c a:hover {
+    text-decoration: underline;
+  }
+}

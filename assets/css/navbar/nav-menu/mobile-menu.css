@@ -1,0 +1,12 @@
+.mobile-menu {
+  display: none;
+  color: #ffffff8c;
+}
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+    font-size: 1.2rem;
+  }
+}

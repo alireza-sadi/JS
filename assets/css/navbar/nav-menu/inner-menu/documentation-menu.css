@@ -1,0 +1,59 @@
+.documentation-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  width: 80%;
+  padding: 2rem 0;
+  z-index: 1;
+  top: 100%;
+  left: 25%;
+  background-color: #fff;
+  color: black;
+  font: normal 0.9rem roboto, sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+  transition: all 150ms ease-in;
+}
+.documentation-menu > a:not(:last-child) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #8ebbff5e;
+}
+.documentation-menu > a {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.documentation-menu > a:hover {
+  background-color: #8ebbff5e;
+}
+.d-logo {
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  color: var(--title-color);
+  background-color: #8ebbff5e;
+  padding: 0.5rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.d-title {
+  color: #a7aeb8;
+  font-size: 0.8rem;
+}
+
+.d-desc {
+  color: var(--text-color-black);
+  font-weight: normal;
+}
+/* hover */
+/* .documentation:hover div {
+  visibility: visible;
+  opacity: 1;
+} */

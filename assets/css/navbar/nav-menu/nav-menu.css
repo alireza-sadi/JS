@@ -1,0 +1,57 @@
+/* import modules */
+
+/* landings menu */
+@import url(./inner-menu/landing-menu.css);
+/* Pages menu */
+@import url(./inner-menu/pages-menu.css);
+/* Documentation menu */
+@import url(./inner-menu/documentation-menu.css);
+
+.nav-menu {
+  position: relative;
+  width: 40%;
+  margin: 0 2.5rem 0 19rem;
+}
+
+.nav-menu ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.nav-menu ul li {
+  height: 6rem;
+  text-decoration: none;
+
+}
+
+.nav-menu ul li a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #ffffff8c;
+  font: 500 1rem roboto, sans-serif;
+  text-decoration: none;
+}
+
+.fa-angle-right {
+  padding-left: 0.5rem;
+}
+.nav-menu ul li:hover a {
+  color: #fff;
+}
+
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
+/* responsive for laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-menu {
+    margin: 0 2.5rem 0 14rem;
+  }
+}

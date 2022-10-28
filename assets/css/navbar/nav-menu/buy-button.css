@@ -1,0 +1,22 @@
+.buy-btn {
+  text-align: center;
+  font: 500 0.9rem roboto, sans-serif;
+  width: 7.5rem;
+  margin-left: 1.5rem;
+  padding: 0.8rem 1.1rem;
+  background-color: var(--button-background-color);
+  border-radius: 0.35rem;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  color: #fff;
+}
+
+.buy-btn:hover {
+  background-color: var(--button-hover-color);
+}
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+  .buy-btn {
+    display: none;
+  }
+}

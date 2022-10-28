@@ -1,0 +1,75 @@
+.divider-seven {
+    width: 100%;
+    position: absolute;
+    height: 400px;
+    bottom: 100%;
+    background-color: #F2F6FC;
+    z-index: -1;
+}
+
+.sect-eight {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    background-color: #F2F6FC;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sect-eight .column-01 {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+
+}
+
+.sect-eight .column-01 div:first-child {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-bottom: 0.8rem;
+}
+
+.sect-eight .column-01 div:last-child {
+    color: #A7AEC7;
+}
+
+.sect-eight .column-02 {
+    display: flex;
+    padding: 1rem 3rem;
+}
+
+.sect-eight .column-02 .btn a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.3rem;
+    background-color: #0061F2;
+    box-shadow: 0 0.25rem 1.25rem 0.5rem rgba(33, 40, 50, 0.104);
+    transition: all 200ms ease-in-out;
+}
+
+.sect-eight .column-02 .btn:last-child a {
+    color: #000;
+    background-color: #fff;
+}
+
+.sect-eight .column-02 .btn a:hover {
+
+    background-color: #0051cb;
+}
+
+.sect-eight .column-02 .btn:last-child a:hover {
+    background-color: #fff;
+}
+
+/* responsive for mobile and tablet */
+@media (max-width: 768px) {
+    .sect-eight{
+        flex-direction: column;
+    }
+    .sect-eight .column-02{
+        flex-direction: column;
+    }
+}

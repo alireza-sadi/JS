@@ -1,0 +1,35 @@
+.pages-menu {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  visibility: hidden;
+  align-items: flex-start;
+  justify-content: space-around;
+  opacity: 0;
+  z-index: 1;
+  top: 100%;
+  left: -25%;
+  background-color: #fff;
+  font: 500 0.9rem roboto, sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+  transition: all 150ms ease-in;
+}
+
+.pages-menu .column {
+  padding: 3rem 1rem;
+  margin: 0;
+}
+
+.pages-menu .column:first-child {
+  padding-left: 2rem;
+}
+
+.pages-menu .column:last-child {
+  padding-right: 2rem;
+}
+/* hover */
+/* .pages:hover div {
+  visibility: visible;
+  opacity: 1;
+} */

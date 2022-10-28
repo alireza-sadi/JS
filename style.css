@@ -1,0 +1,32 @@
+/* import modules */
+
+/* navbar */
+@import url(./assets/css/navbar/navbar.css);
+
+/* main page */
+@import url(./assets/css/main-page/main-page.css);
+
+:root {
+  --background-gradient: linear-gradient(
+    135deg,
+    #0061f2 0%,
+    rgb(105, 0, 199) 100%
+  );
+  --title-color: #0061f2;
+  --text-color-black: #212832;
+  --text-color-white: #ffffff80;
+  --text-hover-color: #5a5a5a;
+  --button-background-color: #00ba94;
+  --button-hover-color: #009e7e;
+}
+/* disable defaults */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font: 400 1rem roboto, sans-serif;
+}
+
+
