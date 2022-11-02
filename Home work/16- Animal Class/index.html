@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        name = "Animal";
+      }
+
+      class Vertebrate extends Animal {}
+
+      class WarmBlooded extends Vertebrate {}
+
+      class Mammal extends WarmBlooded {}
+      class Bird extends WarmBlooded {}
+
+      class ColdBlooded extends Vertebrate {}
+
+      class fish extends ColdBlooded {}
+      class Reptile extends ColdBlooded {}
+      class Amphibian extends ColdBlooded {}
+
+      class Invertebrates extends Animal {}
+
+      class WithJointedLegs extends Invertebrates {}
+
+      class WithThreePairsOfLegs extends WithJointedLegs {}
+      class WithMoreThanThreePairsOfLegs extends WithJointedLegs {}
+
+      class WithoutLegs extends Invertebrates {}
+
+      class WormLike extends WithoutLegs {}
+      class NotWormLike extends WithoutLegs {}
+
+      class Feliformia extends Mammal {}
+
+      class Cat extends Feliformia {}
+
+      BritishShortHair = new Cat();
+      SphynxCat = new Cat();
+      Ragdoll = new Cat();
+    </script>
+  </body>
+</html>
