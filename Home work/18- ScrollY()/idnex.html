@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+  </head>
+
+  <body></body>
+  <script>
+    $("body").append("<div class='holder'><span></span></div>");
+    $("div").css({
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      position: "relative",
+      background:
+        "linear-gradient(0deg, rgba(255,128,0,1) 0%, rgba(255,178,0,1) 50%, rgba(255,235,0,1) 100%)",
+      width: "100%",
+      height: "200vh",
+    });
+    $("span").css({
+      width: "80%",
+      textAlign: "center",
+      position: "fixed",
+      top: "50vh",
+      transform: "translateX(-50%)translateY(-50%)",
+      left: "50%",
+      color: "white",
+      fontSize: "3rem",
+      fontWeight: "700",
+      fontFamily: "roboto",
+      lineHeight:"5rem",
+      overflow: "hidden"
+    });
+    $("*").css({
+      margin: "0",
+      padding: "0",
+      boxSizing: "border-box",
+    });
+    setInterval(() => {
+        // console.log(window.scrollY )
+      if (window.scrollY <= 100) $("span").text("Emily’s Secret ");
+      if (window.scrollY >= 139) $("span").text("Emily is 8 years old. She lives in a big house. She has a huge room. She has many toys and she has a lot of friends. But Emily is not happy. She has a secret.");
+      if (window.scrollY >= 278)
+        $("span").text("She doesn’t want to tell anyone about her secret. She feels embarrassed. The problem is that if nobody knows about it, there is no one that can help her.");
+      if (window.scrollY >= 418) $("span").text("Emily doesn’t write her homework. When there is an exam – she gets sick. She doesn’t tell anyone, but the truth is she can’t read and write. Emily doesn’t remember the letters of the alphabet.");
+      if (window.scrollY >= 557) $("span").text("One day, Emily’s teacher finds out. She sees that Emily can’t write on the board. She calls her after class and asks her to tell the truth. Emily says, “It is true. I don’t know how to read and write”. The teacher listens to her. She wants to help Emily. She tells her, “That’s ok. You can read and write if we practice together”.");
+      if (window.scrollY >= 696) $("span").text("So Emily and her teacher meet every day after class. They practice together. Emily works hard. Now she knows how to read and write.");
+      if (window.scrollY >=835) $("span").text("Finish :))");
+    }, 100);
+  </script>
+</html>
