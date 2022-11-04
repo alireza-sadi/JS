@@ -11,10 +11,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      color: gray;
       text-align: center;
+      color: azure;
     }
     body {
+      background-color: #7c7c7c;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -27,7 +28,7 @@
       line-height: 3em;
       display: inline-block;
       border: 2px solid #eeeeee;
-      color: #cccccc;
+      color: azure;
       border-radius: 50%;
       margin: 0.2rem;
     }
@@ -43,7 +44,7 @@
 
   <body>
     <table></table>
-    <div style="margin-top: 0.8rem">Select 0-7 Key</div>
+    <div style="margin-top: 0.8rem">Press 0-7 Key to fill the circle</div>
     <script>
       A = [
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -73,7 +74,7 @@
 
       $(document).keydown((e) => {
         k = parseInt(e.key);
-        if (k >= 0 && k <= 7) console.log(k) , play(k);
+        if (k >= 0 && k <= 7) console.log(k), play(k);
       });
 
       const play = (ci) => {
