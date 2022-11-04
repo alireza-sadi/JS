@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>4 in a row</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: gray;
+      text-align: center;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    td {
+      width: 3em;
+      height: 3em;
+      line-height: 3em;
+      display: inline-block;
+      border: 2px solid #eeeeee;
+      color: #cccccc;
+      border-radius: 50%;
+      margin: 0.2rem;
+    }
+
+    .type1 {
+      background-color: royalblue;
+    }
+
+    .type2 {
+      background-color: tomato;
+    }
+  </style>
+
+  <body>
+    <table></table>
+    <div style="margin-top: 0.8rem">Select 0-7 Key</div>
+    <script>
+      A = [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+      ];
+      B = [5, 5, 5, 5, 5, 5, 5, 5];
+      player = [1, 2];
+      T = {
+        0: "",
+        1: "type1",
+        2: "type2",
+      };
+      const render = () => {
+        $("table").empty();
+        A.forEach((row) => {
+          $("table").append("<tr></tr>");
+          row.forEach((c, index) => {
+            $("tr").last().append(`<td class="${T[c]}" >${index}</td>`);
+          });
+        });
+      };
+      render();
+
+      $(document).keydown((e) => {
+        k = parseInt(e.key);
+        if (k >= 0 && k <= 7) console.log(k) , play(k);
+      });
+
+      const play = (ci) => {
+        if (B[ci] >= 0) {
+          A[B[ci]][ci] = player[0];
+          B[ci] -= 1;
+          player.reverse();
+          render();
+        }
+      };
+    </script>
+  </body>
+</html>
