@@ -4,10 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="jquery-3.6.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
     <title>4 in a row</title>
   </head>
   <style>
     * {
+      font-family: "Indie Flower", cursive;
+
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -26,25 +34,51 @@
       width: 3em;
       height: 3em;
       line-height: 3em;
+      font-weight: 700;
       display: inline-block;
       border: 2px solid #eeeeee;
       color: azure;
       border-radius: 50%;
       margin: 0.2rem;
+      user-select: none;
+    }
+    td:hover {
+      cursor: pointer;
     }
 
     .type1 {
-      background-color: royalblue;
+      background-color: rgb(18, 58, 179);
     }
 
     .type2 {
-      background-color: tomato;
+      background-color: rgb(175, 40, 16);
+    }
+    button {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background: none;
+      border: solid 1px white;
+      border-radius: 15px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(175, 40, 16);
     }
   </style>
 
   <body>
+    <h2 style="font-size: 3rem">4 in a row</h2>
     <table></table>
-    <div style="margin-top: 0.8rem">Press 0-7 Key to fill the circle</div>
+    <div style="margin-top: 0.8rem; font-size: 1.5rem">
+      Press 0-7 Key to fill the circle<br />
+      Or click each circle to fill it
+    </div>
+    <div>
+      *note: you should fill the circles from bottom to top, Or it will be
+      automate
+    </div>
+    <button id="restart">Restart</button>
     <script>
       A = [
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -63,10 +97,21 @@
       };
       const render = () => {
         $("table").empty();
-        A.forEach((row) => {
+        A.forEach((row, index) => {
           $("table").append("<tr></tr>");
+          $("tr").last().addClass(`r${index}`);
           row.forEach((c, index) => {
-            $("tr").last().append(`<td class="${T[c]}" >${index}</td>`);
+            $("tr").last().append(`<td>${index}</td>`);
+            $("td").last().addClass(`${T[c]} c${index}`);
+          });
+        });
+        $("td").each((i, td) => {
+          td = $(td);
+          td.click((e) => {
+            td = $(e.target);
+            className = td.attr("class");
+            idx = parseInt(className.replace("c", ""));
+            play(idx);
           });
         });
       };
@@ -74,7 +119,7 @@
 
       $(document).keydown((e) => {
         k = parseInt(e.key);
-        if (k >= 0 && k <= 7) console.log(k), play(k);
+        if (k >= 0 && k <= 7) play(k);
       });
 
       const play = (ci) => {
@@ -85,6 +130,19 @@
           render();
         }
       };
+      // const restart = () => {
+      //   for (i = 0; i < 7; i++) {
+      //     for (j = 0; j < 7; j++) {
+      //       A[i][j] = 0;
+      //     }
+      //   }
+      //   B = [5, 5, 5, 5, 5, 5, 5, 5];
+      //   $("td").removeClass("type1 type2");
+      //   render();
+      // };
+      // $("#restart").click(() => {
+      //   restart();
+      // });
     </script>
   </body>
 </html>
