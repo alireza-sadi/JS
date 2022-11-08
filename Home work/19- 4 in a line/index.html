@@ -80,6 +80,7 @@
     </div>
     <button id="restart">Restart</button>
     <script>
+      //  a Matrix  to create a table
       A = [
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -88,13 +89,21 @@
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
       ];
+
+      // array for max and min index
       B = [5, 5, 5, 5, 5, 5, 5, 5];
+
+      // array for who's turn
       player = [1, 2];
+
+      // JSON for add class when player  select cell of table
       T = {
         0: "",
         1: "type1",
         2: "type2",
       };
+
+      // render function to create objects
       const render = () => {
         $("table").empty();
         A.forEach((row, index) => {
@@ -105,6 +114,8 @@
             $("td").last().addClass(`${T[c]} c${index}`);
           });
         });
+
+        // clickable cells
         $("td").each((i, td) => {
           td = $(td);
           td.click((e) => {
@@ -117,11 +128,13 @@
       };
       render();
 
+      //keydown event for play with Num 0-7 in keyboard
       $(document).keydown((e) => {
         k = parseInt(e.key);
         if (k >= 0 && k <= 7) play(k);
       });
 
+      // play function and swap player
       const play = (ci) => {
         if (B[ci] >= 0) {
           A[B[ci]][ci] = player[0];
@@ -130,19 +143,18 @@
           render();
         }
       };
-      // const restart = () => {
-      //   for (i = 0; i < 7; i++) {
-      //     for (j = 0; j < 7; j++) {
-      //       A[i][j] = 0;
-      //     }
-      //   }
-      //   B = [5, 5, 5, 5, 5, 5, 5, 5];
-      //   $("td").removeClass("type1 type2");
-      //   render();
-      // };
-      // $("#restart").click(() => {
-      //   restart();
-      // });
+
+      // restart function : reset everythings to default
+      const restart = () => {
+        B.fill(5);
+        for (i in A) A[i].fill(0);
+        render();
+      };
+
+      // click event to restart the game
+      $("#restart").click(() => {
+        restart();
+      });
     </script>
   </body>
 </html>
