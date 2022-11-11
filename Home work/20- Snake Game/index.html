@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Snake Game</title>
+  </head>
+  <body>
+    <h1>Snake Game</h1>
+    <table></table>
+  </body>
+  <script>
+    A = [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    H = [10, 10, 10, 10];
+    S = [8, 9, 10, 11];
+    t = $("table");
+    x = 0;
+    y = 0;
+    const render = () => {
+      t.empty();
+      A.forEach((row, ri) => {
+        tr = $("<tr></tr>");
+        row.forEach((cell, ci) => {
+          td = $(`<td pos="r${ri}c${ci}">-</td>`);
+          tr.append(td);
+        });
+        t.append(tr);
+      });
+      for (i in H) {
+        $(`td[pos=r${S[i]}c${H[i]}]`).text("#");
+      }
+    };
+    render();
+    const update = () => {
+      H[0] += x;
+      S[0] += y;
+      if (H[0] > A[0].length - 1) H[0] = 0;
+      if (H[0] < 0) H[0] = A[0].length - 1;
+      if (S[0] > A[0].length - 1) S[0] = 0;
+      if (S[0] < 19) S[0] = A[0].length - 1;
+    };
+
+    $(document).keyup((e) => {
+      switch (e.key) {
+        case (e.key = "ArrowUp"):
+          x = 0;
+          y = -1;
+          break;
+        case (e.key = "ArrowDown"):
+          x = 0;
+          y = 1;
+          break;
+        case (e.key = "ArrowRight"):
+          x = 1;
+          y = 0;
+          break;
+        case (e.key = "ArrowLeft"):
+          x = -1;
+          y = 0;
+          break;
+        default:
+          break;
+      }
+    });
+    setInterval(() => {
+      update();
+      render();
+    }, 200);
+  </script>
+</html>
