@@ -43,12 +43,48 @@
         background-color: red;
         width: 1rem;
         height: 1rem;
+        outline: 4px solid rgb(47, 144, 255);
+        outline-style: dashed;
+      }
+      .help {
+        margin-top: 0.5rem;
+        color: #2b3a55;
+        font-family: sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+      .snake-head {
+        background-color: green;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+      }
+      .speed {
+        margin-top: 1rem;
+        font-family: sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #923f3f;
+      }
+      .speed input {
+        padding: 0.5rem;
+        text-align: center;
+        background-color: #ce7777;
+        border-radius: 15px;
+        border: 2px solid #2b3a55;
+        color: azure;
       }
     </style>
   </head>
   <body>
     <h1>Snake Game</h1>
     <div class="container"><table></table></div>
+    <div class="speed">
+      Game Speed :
+      <input type="number" value="1" id="gamespeed" min="1" max="3" />
+    </div>
+
+    <div class="help">Use Arrow keys to move the Snake</div>
   </body>
   <script>
     A = [
@@ -80,6 +116,10 @@
     const randomCell = () => {
       return Math.floor(Math.random() * 10) + Math.floor(Math.random() * 8);
     };
+    const gameSpeed = () => {
+      gameSd = 350 - $("#gamespeed").val() * 100;
+      console.log(gameSd);
+    };
     const render = () => {
       t.empty();
       A.forEach((row, ri) => {
@@ -93,18 +133,25 @@
       for (i in H) {
         $(`td[pos=r${S[i]}c${H[i]}]`).html('<div class="snake-body"></div>');
       }
+      $(`td[pos=r${S[0]}c${H[0]}]`).html('<div class="snake-head"></div>');
     };
     render();
     z = randomCell();
     const feed = () => {
       $(`td[pos=r${z}c${z}]`).html('<div class="red"></div>');
       if (S[0] == z && H[0] == z) {
-        console.log("feeded");
+        S.push(z);
+        H.push(z);
         z = randomCell();
-        $(`td[pos=r${z}c${z}]`).html('<div class="red"></div>');
       }
     };
-
+    feed();
+    const gameOver = () => {
+      for (i in H)
+        if (S[0] == S[i + 1] && H[0] == H[i + 1]) {
+          console.log("Game Over");
+        }
+    };
     const update = () => {
       if (H[0] > A[0].length - 1) H[0] = 0;
       if (H[0] < 0) H[0] = A[0].length - 1;
@@ -154,6 +201,8 @@
       update();
       render();
       feed();
+      gameOver();
+      gameSpeed();
     }, 200);
   </script>
 </html>
