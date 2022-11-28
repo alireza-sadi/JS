@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Snake Game</title>
+    <style>
+      body {
+        background-color: #e8c4c4;
+        height: 100vh;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      h1 {
+        color: #2b3a55;
+        font-family: sans-serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+      }
+      .snake-body {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background-color: #2b3a55;
+      }
+      .container {
+        background-color: #f2e5e5;
+        border: 5px solid #ce7777;
+        box-shadow: 0 0 1rem black;
+        border-radius: 15px;
+      }
+      td {
+        height: 1rem;
+        width: 1rem;
+        padding: 0.3rem;
+      }
+      .red {
+        background-color: red;
+        width: 1rem;
+        height: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Snake Game</h1>
+    <div class="container"><table></table></div>
+  </body>
+  <script>
+    A = [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    H = [10, 10, 10, 10];
+    S = [8, 9, 10, 11];
+    t = $("table");
+    x = 0;
+    y = -1;
+    const randomCell = () => {
+      return Math.floor(Math.random() * 10) + Math.floor(Math.random() * 8);
+    };
+    const render = () => {
+      t.empty();
+      A.forEach((row, ri) => {
+        tr = $("<tr></tr>");
+        row.forEach((cell, ci) => {
+          td = $(`<td pos="r${ri}c${ci}"> </td>`);
+          tr.append(td);
+        });
+        t.append(tr);
+      });
+      for (i in H) {
+        $(`td[pos=r${S[i]}c${H[i]}]`).html('<div class="snake-body"></div>');
+      }
+    };
+    render();
+    z = randomCell();
+    const feed = () => {
+      $(`td[pos=r${z}c${z}]`).html('<div class="red"></div>');
+      if (S[0] == z && H[0] == z) {
+        console.log("feeded");
+        z = randomCell();
+        $(`td[pos=r${z}c${z}]`).html('<div class="red"></div>');
+      }
+    };
+
+    const update = () => {
+      if (H[0] > A[0].length - 1) H[0] = 0;
+      if (H[0] < 0) H[0] = A[0].length - 1;
+      if (S[0] > A[0].length - 1) S[0] = 0;
+      if (S[0] < 0) S[0] = A[0].length - 1;
+
+      for (i = H.length - 1; i > 0; i--) {
+        H[i] = H[i - 1];
+        S[i] = S[i - 1];
+      }
+      H[0] += x;
+      S[0] += y;
+    };
+
+    $(document).keyup((e) => {
+      switch (e.key) {
+        case (e.key = "ArrowUp"):
+          if (y != 1) {
+            x = 0;
+            y = -1;
+          }
+          break;
+        case (e.key = "ArrowDown"):
+          if (y != -1) {
+            x = 0;
+            y = 1;
+          }
+          break;
+        case (e.key = "ArrowRight"):
+          if (x != -1) {
+            x = 1;
+            y = 0;
+          }
+          break;
+        case (e.key = "ArrowLeft"):
+          if (x != 1) {
+            x = -1;
+            y = 0;
+          }
+
+          break;
+        default:
+          break;
+      }
+    });
+    setInterval(() => {
+      update();
+      render();
+      feed();
+    }, 200);
+  </script>
+</html>
