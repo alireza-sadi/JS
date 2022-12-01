@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paint</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+      }
+      canvas {
+        border: 5px solid orangered;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Simple Paint</h2>
+    <canvas height="600 " width="600"></canvas>
+    <script>
+      // Variables
+      canvas = document.querySelector("canvas");
+      ctx = canvas.getContext("2d");
+      (x = 0),
+        (y = 0),
+        (flag = false),
+        (l = canvas.offsetLeft),
+        (t = canvas.offsetTop),
+        (lineSize = 4),
+        (lineColor = "black");
+
+      // Draw on Canvas
+      canvas.addEventListener("mousedown", (el) => {
+        (x = el.x), (y = el.y);
+        flag = true;
+      });
+      canvas.addEventListener("mouseup", (el) => {
+        flag = false;
+      });
+      canvas.addEventListener("mousemove", (el) => {
+        if (flag == false) {
+          return;
+        }
+
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = lineSize;
+        ctx.beginPath();
+        ctx.moveTo(x - l, y - t);
+        ctx.lineTo(el.x - l, el.y - t);
+        ctx.stroke();
+        (x = el.x), (y = el.y);
+      });
+    </script>
+  </body>
+</html>
