@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate</title>
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(44, 33, 44);
+        color: azure;
+      }
+
+      div {
+        font-size: 5rem;
+        cursor: pointer;
+        transition: 500ms;
+        margin-bottom: 2rem;
+      }
+      span {
+        color: azure;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Ali.St</div>
+    <span>click to rotate</span>
+  </body>
+  <script>
+    x = 45;
+    $("div").click(() => {
+      $("div").css({
+        transform: `rotate( ${90+ x}deg)`,
+      });
+      x += 135
+    });
+  </script>
+</html>
