@@ -197,12 +197,16 @@
           break;
       }
     });
-    setInterval(() => {
+    const loader = () => {
       update();
       render();
       feed();
       gameOver();
       gameSpeed();
-    }, 200);
+      setTimeout(() => {
+        loader();
+      }, gameSd);
+    };
+    loader();
   </script>
 </html>
