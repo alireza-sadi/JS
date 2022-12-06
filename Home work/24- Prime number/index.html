@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-3.6.1.min.js"></script>
+    <title>Prime Number</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: sans-serif;
+        color: azure;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      .is-prime span {
+        text-align: center;
+        font-size: 4rem;
+      }
+      .result {
+        padding-left: 1rem;
+        color: brown;
+      }
+      #in-num {
+        padding: 1rem;
+        padding-left: 0;
+        color: azure;
+        margin-top: 3rem;
+        width: 100%;
+        background: none;
+        border: none;
+        border-bottom: 2px solid azure;
+        font-size: 1.5rem;
+      }
+      #in-num::-webkit-input-placeholder {
+        font-family: sans-serif;
+        font-size: 1.5rem;
+      }
+      #in-num:focus {
+        font-size: 1.5rem;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="is-prime">
+        <span>Is Prime?</span><span class="result"></span>
+      </div>
+      <input
+        type="number"
+        name="in-num"
+        id="in-num"
+        oninput="isPrime(this)"
+        onchange="reset(this)"
+        placeholder="Enter number"
+      />
+    </div>
+    <script>
+      result = $(".result");
+      counter = 0;
+      const isPrime = (el) => {
+        if (el.value !== "") {
+          for (i = 2; i < el.value; i++) {
+            if (el.value % i == 0) counter += 1;
+          }
+          if (el.value == 1) counter += 1;
+          if (counter == 0) result.text("Yes");
+          else result.text("No");
+        }
+        counter = 0;
+        if (result.text() == "Yes") result.css({ color: "green" });
+        else result.css({ color: "brown" });
+      };
+
+      const reset = (el) => {
+        result.empty();
+        el.value = "";
+      };
+    </script>
+  </body>
+</html>
